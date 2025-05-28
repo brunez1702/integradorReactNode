@@ -1,6 +1,7 @@
 import './App.css'
 import React from 'react';
-import { Container, Tabs, Tab } from 'react-bootstrap';
+import { Container, Tabs, Tab } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Productos from './components/Productos';
 import Usuarios from './components/Usuarios';
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Table, Button, Form, Row, Col } from 'react-bootstrap';
+import { Form, Row, Col, Button, Table } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 

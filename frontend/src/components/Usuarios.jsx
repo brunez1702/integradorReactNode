@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Table, Button, Form, Row, Col } from 'react-bootstrap';
-import jsPDF from 'jspdf';
-import 'jspdf-autotable';
+import { Form, Row, Col, Button, Table } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 
-const API = 'http://localhost:3001/productos';
+const API = 'http://localhost:3001/usuarios';
 
 function Usuarios() {
   const [usuarios, setUsuarios] = useState([]);
@@ -92,15 +93,18 @@ function Usuarios() {
           {usuarios.map(p => (
             <tr key={p.id}>
               <td>{p.nombre}</td>
-              <td>${p.email}</td>
-              <td>${p.edad}</td>
+              <td>{p.email}</td>
+              <td>{p.edad}</td>
               <td>
-                <Button variant="warning" onClick={() => handleEdit(p)} className="me-2">Editar</Button>
-                <Button variant="danger" onClick={() => handleDelete(p.id)}>Eliminar</Button>
+              <div className="d-flex justify-content-between align-items-center mt-3">
+                <div>
+                    <Button variant="warning" onClick={() => handleEdit(p)} className="me-2">Editar</Button>
+                    <Button variant="danger" onClick={() => handleDelete(p.id)}>Eliminar</Button>
+                </div>
                 <Button variant="success" onClick={exportarPDF} className="mt-3">
                     Exportar PDF
                 </Button>
-
+              </div>
               </td>
             </tr>
           ))}
